@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "template-mod",
+	"version": "0.1-Alpha",
+	"name": "Ever J",
+	"description": "A unique mod in the JoJo's Blizzard Adventure universe with stands that you definitely haven't seen in other mods",
+	"authors": [
+		"Dov1ntc & Captain_june"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/template-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.example.TemplateMod"
+		],
+		"client": [
+			"com.example.TemplateModClient"
+		]
+	},
+	"mixins": [
+		"template-mod.mixins.json",
+		{
+			"config": "template-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
