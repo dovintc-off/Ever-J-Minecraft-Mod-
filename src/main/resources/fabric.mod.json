@@ -5,11 +5,10 @@
 	"name": "Ever J",
 	"description": "A unique mod in the JoJo's Blizzard Adventure universe with stands that you definitely haven't seen in other mods",
 	"authors": [
-		"Dov1ntc & Captain_june"
+		"Dov1ntc", "Captain_june"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/dovintc-off/Ever-J-Minecraft-Mod-"
 	},
 	"license": "MIT",
 	"icon": "assets/template-mod/icon.png",
