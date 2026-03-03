@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class TemplateMod implements ModInitializer {
-	public static final String MOD_ID = "template-mod";
+	public static final String MOD_ID = "ever-j";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -19,6 +19,6 @@ public class TemplateMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Mod \"Ever J\" has been started!\n\t\t\t\tMod Create by: \"Dov1ntc\", \"Captain_june\"");
 	}
 }

@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "template-mod",
-	"version": "0.1-Alpha",
-	"name": "Ever J",
+	"id": "ever-j",
+	"version": "0.1.2-Alpha",
+	"name": "Ever-J",
 	"description": "A unique mod in the JoJo's Blizzard Adventure universe with stands that you definitely haven't seen in other mods",
 	"authors": [
 		"Dov1ntc", "Captain_june"
@@ -11,7 +11,7 @@
 		"sources": "https://github.com/dovintc-off/Ever-J-Minecraft-Mod-"
 	},
 	"license": "MIT",
-	"icon": "assets/template-mod/icon.png",
+	"icon": "assets/ever-j/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -21,17 +21,11 @@
 			"com.example.TemplateModClient"
 		]
 	},
-	"mixins": [
-		"template-mod.mixins.json",
-		{
-			"config": "template-mod.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
-		"fabricloader": ">=0.18.4",
+		"fabricloader": ">=0.14.21",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"cloth-config": ">=11.0.0"
 	}
 }
