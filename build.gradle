@@ -17,6 +17,9 @@ java {
     withSourcesJar()
 }
 
+repositories {
+    maven { url "https://maven.terraformersmc.com/" }
+}
 
 loom {
     splitEnvironmentSourceSets()
@@ -35,6 +38,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     
     modCompileOnly files("libs/cloth-config-11.1.136-fabric.jar")
+    modCompileOnly files("libs/modmenu-7.2.2.jar")
 }
 
 processResources {

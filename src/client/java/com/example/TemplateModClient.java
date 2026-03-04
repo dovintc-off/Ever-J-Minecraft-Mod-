@@ -9,6 +9,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.lwjgl.glfw.GLFW;
@@ -21,10 +22,12 @@ public class TemplateModClient implements ClientModInitializer {
         new KeyBinding(
             "key.ever-j.open_settings",
             InputUtil.Type.KEYSYM,
-            GLFW.GLFW_KEY_J,
+            GLFW.GLFW_KEY_O,
             "category.ever-j"
         )
     );
+    
+    private static boolean standKeyWasPressed = false;
 
     @Override
     public void onInitializeClient() {
@@ -35,6 +38,17 @@ public class TemplateModClient implements ClientModInitializer {
             while (OPEN_SETTINGS_KEY.wasPressed()) {
                 client.setScreen(ModSettingsScreen.create(client.currentScreen));
             }
+            
+            boolean isStandKeyPressed = InputUtil.isKeyPressed(
+                client.getWindow().getHandle(), 
+                ModSettingsScreen.standActivateKey.getCode()
+            );
+            
+            if (isStandKeyPressed && !standKeyWasPressed) {
+                sendStandActiveMessage(client);
+            }
+            
+            standKeyWasPressed = isStandKeyPressed;
         });
 
         HudRenderCallback.EVENT.register((DrawContext context, float tickDelta) -> {
@@ -42,11 +56,17 @@ public class TemplateModClient implements ClientModInitializer {
 
             MinecraftClient client = MinecraftClient.getInstance();
             if (client.world != null && client.world.isRaining() && client.world.getRegistryKey() == World.OVERWORLD) {
-                int size = 32;
+                int size = ModSettingsScreen.rainIconSize;
                 int x = client.getWindow().getScaledWidth() - size - 5;
                 int y = 10;
                 context.drawTexture(RAIN_ICON_TEXTURE, x, y, 0, 0, size, size, size, size);
             }
         });
+    }
+
+    private void sendStandActiveMessage(MinecraftClient client){
+        if (client.player != null){
+            client.player.sendMessage(Text.literal("§6§lStand Active"), false);
+        }
     }
 }

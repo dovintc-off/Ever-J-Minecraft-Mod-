@@ -3,5 +3,7 @@
   "category.ever-j": "Мод Ever J",
   "category.ever-j.general": "Основные",
   "screen.ever-j.settings.title": "Настройки Ever J",
-  "screen.ever-j.settings.toggle": "Показывать иконку дождя"
+  "screen.ever-j.settings.toggle": "Показывать иконку дождя",
+  "screen.ever-j.settings.sizeIcon": "Размер иконки дождя",
+  "screen.ever-j.settings.stand_key": "Клавиша активации стенда"
 }

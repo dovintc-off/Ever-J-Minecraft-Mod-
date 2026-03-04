@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "ever-j",
-	"version": "0.1.2-Alpha",
+	"version": "0.1.3-Alpha",
 	"name": "Ever-J",
 	"description": "A unique mod in the JoJo's Blizzard Adventure universe with stands that you definitely haven't seen in other mods",
 	"authors": [
@@ -19,6 +19,9 @@
 		],
 		"client": [
 			"com.example.TemplateModClient"
+		],
+		"modmenu": [
+			"com.example.ModMenuIntegration"
 		]
 	},
 	"depends": {
